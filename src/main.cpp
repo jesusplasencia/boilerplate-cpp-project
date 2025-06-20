@@ -1,6 +1,8 @@
-#include "logger/logger.h"
+// Getting Started CLRS
+#include <iostream>
+#include "math/math.h"
 
 int main() {
-  log("Hello from your C++ Project");
-  return 0;
+  std::cout << multiply(8, 8) << std::endl;
+  std::cin.get();
 }

@@ -1,9 +1,6 @@
 #ifndef LOGGER_H
 #define LOGGER_H
 
-#include <string>
-#include <iostream>
-
-void log(const std::string& message);
+void log(const char* message);
 
 #endif // LOGGER_H

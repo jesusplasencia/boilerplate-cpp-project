@@ -1,5 +1,6 @@
-#include "logger/logger.h"
+#include "logger.h"
+#include <iostream>
 
-void log(const std::string& message) {
+void log(const char* message) {
   std::cout << message << std::endl;
 }
