@@ -30,7 +30,7 @@ install_manifest.txt
 *.swp
 *.swo
 *~
-
+*cache
 # macOS files
 .DS_Store
 

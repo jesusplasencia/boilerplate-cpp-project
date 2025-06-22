@@ -34,7 +34,7 @@ echo "Created new build directory: $BUILD_DIR"
 echo "Configuring project with CMake..."
 # The -G, -D flags ensure explicit settings, overriding anything set in CMakeLists.txt or environment vars.
 # This makes the script very reliable.
-CMAKE_COMMAND="cmake -S . -B \"$BUILD_DIR\" -G \"$CMAKE_GENERATOR\" -DCMAKE_C_COMPILER=\"$CMAKE_C_COMPILER\" -DCMAKE_CXX_COMPILER=\"$CMAKE_CXX_COMPILER\""
+CMAKE_COMMAND="cmake -S . -B \"$BUILD_DIR\" -G \"$CMAKE_GENERATOR\" -DCMAKE_C_COMPILER=\"$CMAKE_C_COMPILER\" -DCMAKE_CXX_COMPILER=\"$CMAKE_CXX_COMPILER\" -DCMAKE_BUILD_TYPE=Debug"
 echo "Running: $CMAKE_COMMAND"
 eval "$CMAKE_COMMAND"
 
@@ -47,8 +47,6 @@ echo "CMake configuration successful."
 
 # --- Build Project with Ninja ---
 echo "Building project with Ninja..."
-# cd "$BUILD_DIR" || { echo "Failed to change directory to build dir"; exit 1; }
-# ninja # Alternative if you prefer to cd into build dir
 ninja -C "$BUILD_DIR" # -C flag tells ninja to operate in the specified directory
 
 # Check if Ninja build was successful
@@ -57,14 +55,5 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 echo "Build successful."
-
-# --- Run Executable (Optional) ---
-# EXECUTABLE_PATH="$BUILD_DIR/$EXECUTABLE_NAME"
-# if [ -f "$EXECUTABLE_PATH" ]; then
-#     echo "Running executable: $EXECUTABLE_PATH"
-#     "$EXECUTABLE_PATH"
-# else
-#     echo "Warning: Executable '$EXECUTABLE_PATH' not found."
-# fi
 
 echo "Script finished."

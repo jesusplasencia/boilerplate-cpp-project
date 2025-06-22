@@ -15,7 +15,7 @@ set(CMAKE_CXX_COMPILER g++)
 set(CMAKE_GENERATOR ninja)
 
 # Add an executable target.
-add_executable(app src/main.cpp src/logger/logger.cpp src/math/math.cpp)
+add_executable(app src/main.cpp src/Log/Log.cpp)
 
 # If your header files were in a separate 'include' directory (common practice),
 # you would add that directory to the include paths like this:

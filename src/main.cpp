@@ -1,8 +1,8 @@
 // Getting Started CLRS
 #include <iostream>
-#include "math/math.h"
+#include "Log/Log.h"
 
 int main() {
-  std::cout << multiply(8, 8) << std::endl;
+  Log("Hello World!");
   std::cin.get();
 }
